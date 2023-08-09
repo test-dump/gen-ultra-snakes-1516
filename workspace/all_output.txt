@@ -1,13 +1,48 @@
-To compile and run this program:
+Correct, the "Hello, World!" console application will print "Hello, World!" to your console. But if you want to create unit tests for this, here is how you can do it:
 
-1) Open a new project in Visual Studio.
+First, you need to modify your `Program` class so you can call the `Main` method in a test:
 
-2) Choose "Console App (.NET Core)" under C# in the New Project Dialog.
+```csharp
+using System;
 
-3) Name your project and click Create.
+public class Program
+{
+    public static void Main()
+    {
+        SayHello();
+    }
 
-4) Replace the pre-filled code with the "Hello, World!" code provided.
+    public static string SayHello()
+    {
+        string message = "Hello, World!";
+        Console.WriteLine(message);
+        
+        return message;
+    }
+}
+```
 
-5) To run the code, simply click on "Start Debugging" in the Debug menu, or press F5. 
+Then, you can create a test for the `SayHello` method:
 
-You should see "Hello, World!" printed in your console.
+```csharp
+using Xunit;
+
+public class ProgramTest
+{
+    [Fact]
+    public void SayHello_ReturnsCorrectMessage()
+    {
+        // Act
+        string message = Program.SayHello();
+        
+        // Assert
+        Assert.Equal("Hello, World!", message);
+    }
+}
+```
+
+Now, the method `SayHello` will both print "Hello, World!" to the console and return the string "Hello, World!". The unit test `SayHello_ReturnsCorrectMessage` is checking that the string returned by the method `SayHello` is indeed "Hello, World!". 
+
+You can run the test using a test runner compatible with xUnit, which is a unit testing tool for .NET. 
+
+If `SayHello_ReturnsCorrectMessage` test passes, it means the `SayHello` method of your `Program` returns (and therefore prints) "Hello, World!" to the console, as expected.
