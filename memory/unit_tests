@@ -1,0 +1,13 @@
+To compile and run this program:
+
+1) Open a new project in Visual Studio.
+
+2) Choose "Console App (.NET Core)" under C# in the New Project Dialog.
+
+3) Name your project and click Create.
+
+4) Replace the pre-filled code with the "Hello, World!" code provided.
+
+5) To run the code, simply click on "Start Debugging" in the Debug menu, or press F5. 
+
+You should see "Hello, World!" printed in your console.
