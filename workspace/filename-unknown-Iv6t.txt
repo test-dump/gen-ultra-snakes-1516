@@ -1,0 +1,17 @@
+using System;
+
+public class Program
+{
+    public static void Main()
+    {
+        SayHello();
+    }
+
+    public static string SayHello()
+    {
+        string message = "Hello, World!";
+        Console.WriteLine(message);
+        
+        return message;
+    }
+}
